@@ -101,9 +101,17 @@ footer.footer {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  footer.footer {
+    background-color: $black-ter;
+  }
+}
+
 // 6. Import the rest of Bulma
 @import "bulma/bulma";
 @import "bulma-tooltip/dist/css/bulma-tooltip.min";
+@import "bulma-popover/css/bulma-popover";
+@import "bulma-prefers-dark/bulma-prefers-dark.sass";
 
 $dark-75: scale-color($dark, $lightness: 25%);
 $dark-50: scale-color($dark, $lightness: 50%);
@@ -183,6 +191,10 @@ $danger-25: scale-color($danger, $lightness: 75%);
   color: $blue-light !important;
 }
 
+.has-background-blue-light {
+  background-color: $blue-light;
+}
+
 // border and background colors
 .has-background-dark-75 {
   background-color: $dark-75;
@@ -248,8 +260,21 @@ $danger-25: scale-color($danger, $lightness: 75%);
   background-color: $danger-25;
 }
 
-.has-background-blue-light {
-  background-color: $blue-light;
+@media (prefers-color-scheme: dark) {
+  .has-text-black {
+    color: $white !important;
+  }
+
+  .has-text-white {
+    color: $black !important;
+  }
+
+  .has-background-light {
+    background-color: $black-ter !important;
+  }
+  .has-background-dark {
+    background-color: $grey-lighter !important;
+  }
 }
 
 // tags
@@ -344,7 +369,7 @@ $danger-25: scale-color($danger, $lightness: 75%);
 
   &.is-primary:active,
   &.is-primary.is-active {
-    background-color: scale-color($primary, $lightness: -20%);
+    background-color: scale-color($primary, $lightness: -10%);
   }
 
   &.is-primary[disabled] {
@@ -358,7 +383,7 @@ $danger-25: scale-color($danger, $lightness: 75%);
 
   &.is-info:active,
   &.is-info.is-active {
-    background-color: scale-color($info, $lightness: -20%);
+    background-color: scale-color($info, $lightness: -10%);
   }
 
   &.is-info[disabled] {
@@ -372,7 +397,7 @@ $danger-25: scale-color($danger, $lightness: 75%);
 
   &.is-link:active,
   &.is-link.is-active {
-    background-color: scale-color($link, $lightness: -20%);
+    background-color: scale-color($link, $lightness: -10%);
   }
 
   &.is-link[disabled] {
@@ -386,7 +411,7 @@ $danger-25: scale-color($danger, $lightness: 75%);
 
   &.is-success:active,
   &.is-success.is-active {
-    background-color: scale-color($success, $lightness: -20%);
+    background-color: scale-color($success, $lightness: -10%);
   }
 
   &.is-success[disabled] {
@@ -400,7 +425,7 @@ $danger-25: scale-color($danger, $lightness: 75%);
 
   &.is-warning:active,
   &.is-warning.is-active {
-    background-color: scale-color($warning, $lightness: -20%);
+    background-color: scale-color($warning, $lightness: -10%);
   }
 
   &.is-warning[disabled] {
@@ -415,7 +440,7 @@ $danger-25: scale-color($danger, $lightness: 75%);
 
   &.is-danger:active,
   &.is-danger.is-active {
-    background-color: scale-color($danger, $lightness: -20%);
+    background-color: scale-color($danger, $lightness: -10%);
   }
 
   &.is-danger[disabled] {
@@ -439,6 +464,127 @@ $danger-25: scale-color($danger, $lightness: 75%);
       // simultaneously with left margin of Bulma
       .icon:first-child:not(:last-child) {
         margin-right: calc(-0.375em - 1px);
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .button {
+    &.is-primary,
+    &.is-info,
+    &.is-link,
+    &.is-success,
+    &.is-warning,
+    &.is-danger {
+      &.is-outlined {
+        background-color: $black;
+      }
+    }
+
+    &.is-primary:hover,
+    &.is-primary.is-hovered {
+      background-color: scale-color($primary, $lightness: -5%);
+    }
+
+    &.is-primary:active,
+    &.is-primary.is-active {
+      background-color: scale-color($primary, $lightness: -10%);
+    }
+
+    &.is-primary[disabled] {
+      background-color: scale-color($primary, $lightness: -75%);
+    }
+
+    &.is-info:hover,
+    &.is-info.is-hovered {
+      background-color: scale-color($info, $lightness: -5%);
+    }
+
+    &.is-info:active,
+    &.is-info.is-active {
+      background-color: scale-color($info, $lightness: -10%);
+    }
+
+    &.is-info[disabled] {
+      background-color: scale-color($info, $lightness: -75%);
+    }
+
+    &.is-link:hover,
+    &.is-link.is-hovered {
+      background-color: scale-color($link, $lightness: -5%);
+    }
+
+    &.is-link:active,
+    &.is-link.is-active {
+      background-color: scale-color($link, $lightness: -10%);
+    }
+
+    &.is-link[disabled] {
+      background-color: scale-color($link, $lightness: -75%);
+    }
+
+    &.is-success:hover,
+    &.is-success.is-hovered {
+      background-color: scale-color($success, $lightness: -5%);
+    }
+
+    &.is-success:active,
+    &.is-success.is-active {
+      background-color: scale-color($success, $lightness: -10%);
+    }
+
+    &.is-success[disabled] {
+      background-color: scale-color($success, $lightness: -75%);
+    }
+
+    &.is-warning:hover,
+    &.is-warning.is-hovered {
+      background-color: scale-color($warning, $lightness: -5%);
+    }
+
+    &.is-warning:active,
+    &.is-warning.is-active {
+      background-color: scale-color($warning, $lightness: -10%);
+    }
+
+    &.is-warning[disabled] {
+      background-color: scale-color($warning, $lightness: -75%);
+      color: #e1d4c2;
+    }
+
+    &.is-danger:hover,
+    &.is-danger.is-hovered {
+      background-color: scale-color($danger, $lightness: -5%);
+    }
+
+    &.is-danger:active,
+    &.is-danger.is-active {
+      background-color: scale-color($danger, $lightness: -10%);
+    }
+
+    &.is-danger[disabled] {
+      background-color: scale-color($danger, $lightness: -75%);
+    }
+
+    &.is-reduced-mobile,
+    &.reduced-mobile {
+      @media screen and (max-width: 1087px) {
+        > span:nth-child(2) {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 1087px) and (min-width: 769px) {
+        // simultaneously with left margin of Bulma
+        > .icon:first-child:not(:last-child) {
+          margin: 0;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        // simultaneously with left margin of Bulma
+        .icon:first-child:not(:last-child) {
+          margin-right: calc(-0.375em - 1px);
+        }
       }
     }
   }
@@ -477,6 +623,15 @@ ul.is-separated {
   }
   > li:last-child:after {
     content: "";
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .subtitle {
+    color: $grey-light;
+  }
+  .has-border-white {
+    border-color: black !important;
   }
 }
 
@@ -557,6 +712,17 @@ ul.is-separated {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .table {
+    background-color: transparent;
+
+    & td, & th {
+      border: 1px solid $grey-darker;
+      border-width: 0 0 1px;
+    }
+  }
+}
+
 // card tables
 .card-table {
   border-collapse: separate;
@@ -626,6 +792,33 @@ ul.is-separated {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .card-table {
+    background-color: transparent;
+
+    tr:hover td {
+      background-color: #242424;
+
+      &.is-darker {
+        background-color: $grey-darker;
+      }
+    }
+
+    td {
+      background-color: #121212;
+      border-color: #17181c;
+
+      a {
+        color: #b5b5b5;
+      }
+
+      &.is-darker {
+        background-color: $black-ter;
+      }
+    }
+  }
+}
+
 // panels
 .panel {
   border: 1px solid #dbdbdb;
@@ -679,6 +872,13 @@ form .field:not(.is-grouped) {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .select select, .textarea, .input {
+    background-color: black;
+    color: $grey-light;
+  }
+}
+
 .help {
   position: absolute;
 }
@@ -713,6 +913,14 @@ form .field:not(.is-grouped) {
 }
 .pagination-link.is-current {
   opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .pagination-previous[disabled],
+  .pagination-next[disabled] {
+    background-color: #22242a;
+    color: #8a8a8a;
+  }
 }
 
 // hero
@@ -776,6 +984,12 @@ form .field:not(.is-grouped) {
     &.is-active {
       color: $blue;
       background-color: #fff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      &.is-active {
+        background-color: $black-bis !important;
+      }
     }
   }
 
@@ -845,12 +1059,44 @@ form .field:not(.is-grouped) {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .menu-list {
+    background-color: $black-bis;
+
+    a {
+      color: $text-dark;
+
+      &.is-active {
+        background-color: $black;
+      }
+    }
+
+    > li {
+      border-color: $grey-dark;
+
+      &:last-child {
+        border-color: $grey-dark;
+      }
+    }
+  }
+}
+
 // modal
 .modal-card {
   border-radius: 6px;
 
   .modal-card-foot {
     justify-content: flex-end; // pulled-right
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .modal-card-body {
+    background-color: #17181c;
+  }
+
+  .modal-background {
+    background-color: rgba(10, 10, 10, 0.86);
   }
 }
 
@@ -891,5 +1137,3 @@ form .field:not(.is-grouped) {
     @include loader;
   }
 }
-
-@import "bulma-popover/css/bulma-popover";
