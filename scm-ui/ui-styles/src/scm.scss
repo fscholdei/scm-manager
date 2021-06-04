@@ -469,7 +469,7 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
   color: #666;
 }
 .has-border-white {
-  border-color: #fff !important;
+  border-color: white !important;
 }
 ul.is-separated {
   > li:after {
@@ -552,7 +552,7 @@ ul.is-separated {
   width: 100%;
   td,
   th {
-    border-color: #eee;
+    border-color: $white-ter;
     padding: 1rem;
   }
 }
@@ -757,7 +757,7 @@ form .field:not(.is-grouped) {
   color: #fff;
   font-size: 1em;
   font-weight: 600;
-  background-color: #bbb;
+  background-color: $blue;
   border-radius: 5px 5px 0 0;
   padding: 0.5rem 1rem;
   text-transform: none;
@@ -767,9 +767,7 @@ form .field:not(.is-grouped) {
     margin-bottom: 0;
   }
 }
-.menu div:first-child .menu-label {
-  background-color: $blue;
-}
+
 .menu-list {
   a {
     color: #333;
@@ -784,7 +782,7 @@ form .field:not(.is-grouped) {
   > li {
     ul {
       margin: 0;
-      border-top: 1px solid #eee;
+      border-top: 1px solid $white-ter;
 
       li {
         border-right: none;
@@ -807,15 +805,15 @@ form .field:not(.is-grouped) {
     }
 
     border-radius: 0;
-    border-top: 1px solid #eee;
-    border-left: 1px solid #eee;
-    border-right: 1px solid #eee;
+    border-top: 1px solid $white-ter;
+    border-left: 1px solid $white-ter;
+    border-right: 1px solid $white-ter;
   }
   > li:first-child {
     border-top: none;
   }
   li:last-child {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid $white-ter;
   }
   div {
     margin-bottom: 0;
