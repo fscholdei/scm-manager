@@ -99,30 +99,32 @@ class LoginForm extends React.Component<Props, State> {
   render() {
     const { loading, t } = this.props;
     return (
-      <div className="column is-4 box has-text-centered has-background-white-ter">
-        <h3 className="title">{t("login.title")}</h3>
-        <p className="subtitle">{t("login.subtitle")}</p>
-        <TopMarginBox className="box">
-          <AvatarWrapper>
-            <AvatarImage src="/images/blib.jpg" alt={t("login.logo-alt")} />
-          </AvatarWrapper>
-          <ErrorNotification error={this.areCredentialsInvalid()} />
-          <form onSubmit={this.handleSubmit}>
-            <InputField
-              testId="username-input"
-              placeholder={t("login.username-placeholder")}
-              autofocus={true}
-              onChange={this.handleUsernameChange}
-            />
-            <InputField
-              testId="password-input"
-              placeholder={t("login.password-placeholder")}
-              type="password"
-              onChange={this.handlePasswordChange}
-            />
-            <SubmitButton label={t("login.submit")} fullWidth={true} loading={loading} testId="login-button" />
-          </form>
-        </TopMarginBox>
+      <div className="is-flex is-align-items-center column is-4 box has-text-centered has-background-white-ter">
+        <div>
+          <h3 className="title">{t("login.title")}</h3>
+          <p className="subtitle">{t("login.subtitle")}</p>
+          <TopMarginBox className="box">
+            <AvatarWrapper>
+              <AvatarImage src="/images/blib.jpg" alt={t("login.logo-alt")} />
+            </AvatarWrapper>
+            <ErrorNotification error={this.areCredentialsInvalid()} />
+            <form onSubmit={this.handleSubmit}>
+              <InputField
+                testId="username-input"
+                placeholder={t("login.username-placeholder")}
+                autofocus={true}
+                onChange={this.handleUsernameChange}
+              />
+              <InputField
+                testId="password-input"
+                placeholder={t("login.password-placeholder")}
+                type="password"
+                onChange={this.handlePasswordChange}
+              />
+              <SubmitButton label={t("login.submit")} fullWidth={true} loading={loading} testId="login-button" />
+            </form>
+          </TopMarginBox>
+        </div>
       </div>
     );
   }
