@@ -33,14 +33,14 @@ const Spacing = styled.div`
 `;
 
 storiesOf("Forms|AddKeyValueEntryToTableField", module)
-  .addDecorator(story => <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>)
+  .addDecorator((story) => <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>)
   .add("Default", () => (
     <Spacing>
       <AddKeyValueEntryToTableField
         keyFieldLabel="Key"
         valueFieldLabel="Value"
-        buttonLabel="Add to table"
-        addEntry={(key, value) => {console.log(key, value)}}
+        buttonLabel="Add to Table"
+        addEntry={() => null}
       />
     </Spacing>
   ))
@@ -49,8 +49,8 @@ storiesOf("Forms|AddKeyValueEntryToTableField", module)
       <AddKeyValueEntryToTableField
         keyFieldLabel="Key"
         valueFieldLabel="Value"
-        buttonLabel="Add to table"
-        addEntry={() => {}}
+        buttonLabel="Add to Table"
+        addEntry={() => null}
         disabled={true}
       />
     </Spacing>
