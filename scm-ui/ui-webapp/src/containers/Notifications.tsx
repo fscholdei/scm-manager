@@ -52,9 +52,6 @@ const Bell = styled(Icon)`
 `;
 
 const Container = styled.div`
-  display: flex;
-  cursor: pointer;
-
   @media screen and (max-width: ${devices.desktop.width}px) {
     padding-right: 1rem;
   }
@@ -344,7 +341,7 @@ const Notifications: FC = () => {
         })}
         onClick={(e) => e.stopPropagation()}
       >
-        <Container className="dropdown-trigger">
+        <Container className="is-flex dropdown-trigger is-clickable">
           <BellNotificationIcon data={data} onClick={() => setOpen((o) => !o)} />
         </Container>
         <DropDownMenu className="dropdown-menu" id="dropdown-menu" role="menu">
