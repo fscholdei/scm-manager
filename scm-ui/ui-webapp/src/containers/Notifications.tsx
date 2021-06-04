@@ -33,14 +33,14 @@ import {
   ToastType,
   Loading,
   DateFromNow,
-  devices
+  devices,
 } from "@scm-manager/ui-components";
 import styled from "styled-components";
 import {
   useClearNotifications,
   useDismissNotification,
   useNotifications,
-  useNotificationSubscription
+  useNotificationSubscription,
 } from "@scm-manager/ui-api";
 import { Notification, NotificationCollection } from "@scm-manager/ui-types";
 import { useHistory, Link } from "react-router-dom";
@@ -86,6 +86,13 @@ const DropDownMenu = styled.div`
     border-width: 0.4rem;
     transform-origin: center;
     transform: rotate(135deg);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:before {
+      border-bottom-color: black;
+      border-left-color: black;
+    }
   }
 `;
 
@@ -282,7 +289,7 @@ type NotificationCounterProps = {
 const NotificationCounter = styled.span<NotificationCounterProps>`
   position: absolute;
   top: -0.5rem;
-  right: ${props => (props.count < 10 ? "0" : "-0.25")}rem;
+  right: ${(props) => (props.count < 10 ? "0" : "-0.25")}rem;
 `;
 
 type BellNotificationIconProps = {
@@ -333,12 +340,12 @@ const Notifications: FC = () => {
       <NotificationSubscription notifications={notifications} remove={remove} />
       <div
         className={classNames("is-align-self-flex-end", "dropdown", "is-right", "is-hoverable", {
-          "is-active": open
+          "is-active": open,
         })}
-        onClick={e => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
       >
         <Container className="dropdown-trigger">
-          <BellNotificationIcon data={data} onClick={() => setOpen(o => !o)} />
+          <BellNotificationIcon data={data} onClick={() => setOpen((o) => !o)} />
         </Container>
         <DropDownMenu className="dropdown-menu" id="dropdown-menu" role="menu">
           <ErrorBox error={error} />
