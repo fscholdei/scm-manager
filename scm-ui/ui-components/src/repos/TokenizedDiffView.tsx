@@ -58,6 +58,27 @@ const DiffView = styled(Diff)`
   &.unified .diff-widget-content .is-indented-line {
     padding-left: 6.5rem;
   }
+
+  @media (prefers-color-scheme: dark) {
+    --diff-selection-background-color: #001833;
+    --diff-gutter-insert-background-color: #02530c;
+    --diff-gutter-delete-background-color: #4d0b12;
+    --diff-gutter-selected-background-color: #605700;
+    --diff-code-insert-background-color: #006a14;
+    --diff-code-delete-background-color: #610c12;
+    --diff-code-insert-edit-background-color: #212d0e;
+    --diff-code-delete-edit-background-color: #3e080a;
+    --diff-code-selected-background-color: #605700;
+    --diff-omit-gutter-line-color: #450e0a;
+
+    .diff-gutter-conflict {
+      background: #5e4b00;
+    }
+    .diff-code-conflict {
+      background: #6f5a00;
+    }
+    
+  }
 `;
 
 // WebWorker which creates tokens for syntax highlighting

@@ -39,6 +39,11 @@ const ActionBar = styled.div`
   line-height: 1.25;
   padding: 0.5em 0.75em;
   margin-bottom: 1em;
+
+  @media (prefers-color-scheme: dark) {
+    background: #242424;
+    border-color: #4a4a4a;
+  }
 `;
 
 const FlexShrinkLevel = styled(Level)`

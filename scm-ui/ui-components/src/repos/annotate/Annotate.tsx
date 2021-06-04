@@ -60,6 +60,15 @@ const initialState = {
 const NoSpacingReactSyntaxHighlighter = styled(ReactSyntaxHighlighter)`
   margin: 0 !important;
   padding: 0 !important;
+
+  @media (prefers-color-scheme: dark) {
+    color: #b5b5b5 !important;
+    background: #17181c !important;
+
+    & code {
+      color: #b5b5b5 !important;
+    }
+  }
 `;
 
 const reducer = (state: State, action: Action): State => {

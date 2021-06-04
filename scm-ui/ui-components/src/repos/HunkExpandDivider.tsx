@@ -30,6 +30,10 @@ const HunkDivider = styled.div`
   background: #98d8f3;
   font-size: 0.7rem;
   padding-left: 1.78em;
+
+  @media (prefers-color-scheme: dark) {
+    background: #0b2a38;
+  }
 `;
 
 const HunkExpandDivider: FC = ({ children }) => {

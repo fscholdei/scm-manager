@@ -51,6 +51,12 @@ const AutocompleteWrapper = styled.div`
     @media (prefers-color-scheme: dark) {
       background-color: black;
       color: #b5b5b5;
+      border-color: #0b2a38;
+
+      &:hover,
+      &.is-hovered {
+        border-color: #4a4a4a;
+      }
     }
   }
 `;

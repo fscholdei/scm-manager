@@ -61,10 +61,6 @@ const HomeIcon = styled(Icon)`
   line-height: 1.5rem;
 `;
 
-const SearchHelp = styled(Help)`
-  margin-left: 0.75rem;
-`;
-
 const useRevision = () => {
   const { revision } = useParams<Params>();
   return decodeURIComponent(revision);
@@ -125,7 +121,7 @@ const FileSearch: FC<Props> = ({ repository, baseUrl, branches, selectedBranch }
             filter={search}
             autoFocus={true}
           />
-          <SearchHelp message={t("filesearch.input.help")} />
+          <Help className="ml-3" message={t("filesearch.input.help")} />
         </InputContainer>
         <ErrorNotification error={error} />
         {isLoading ? <Loading /> : <FileSearchResults contentBaseUrl={contentBaseUrl} query={query} paths={result} />}

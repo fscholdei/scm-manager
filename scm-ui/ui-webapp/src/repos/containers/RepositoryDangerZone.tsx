@@ -58,6 +58,12 @@ export const DangerZoneContainer = styled.div`
     padding-bottom: 1.5rem;
     border-bottom: solid 2px whitesmoke;
   }
+
+  @media (prefers-color-scheme: dark) {
+    > *:not(:last-child) {
+      border-bottom-color: #363636;
+    }
+  }
 `;
 
 const RepositoryDangerZone: FC<Props> = ({ repository, indexLinks }) => {

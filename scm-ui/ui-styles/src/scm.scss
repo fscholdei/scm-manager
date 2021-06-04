@@ -29,6 +29,7 @@ $blue: #33b2e8;
 $cyan: $blue;
 $green: #00c79b;
 $blue-light: #98d8f3;
+$blue-dark: #0b2a38;
 $family-monospace: "Courier New", Monaco, Menlo, "Ubuntu Mono", "source-code-pro", monospace;
 
 .is-ellipsis-overflow {
@@ -188,9 +189,8 @@ $danger-25: scale-color($danger, $lightness: 75%);
 }
 
 .has-text-blue-light {
-  color: $blue-light !important;
+  color: $blue-light;
 }
-
 .has-background-blue-light {
   background-color: $blue-light;
 }
@@ -261,19 +261,121 @@ $danger-25: scale-color($danger, $lightness: 75%);
 }
 
 @media (prefers-color-scheme: dark) {
-  .has-text-black {
-    color: $white !important;
+  .has-text-blue-light {
+    color: $blue-dark;
+  }
+  .has-background-blue-light {
+    background-color: $blue-dark;
   }
 
   .has-text-white {
     color: $black !important;
   }
+  a.has-text-white:hover,
+  a.has-text-white:focus {
+    color: lighten($black, 10%) !important;
+  }
+  .has-background-white {
+    background-color: $black !important;
+  }
 
+  .has-text-white-bis {
+    color: $black-bis !important;
+  }
+  a.has-text-white-bis:hover,
+  a.has-text-white-bis:focus {
+    color: lighten($black-bis, 10%) !important;
+  }
+  .has-background-white-bis {
+    background-color: $black-bis !important;
+  }
+
+  .has-text-white-ter {
+    color: $black-ter !important;
+  }
+  a.has-text-white-ter:hover,
+  a.has-text-white-ter:focus {
+    color: lighten($black-ter, 10%) !important;
+  }
+  .has-background-white-ter {
+    background-color: $black-ter !important;
+  }
+
+  .has-text-light {
+    color: $black-ter !important;
+  }
+  a.has-text-light:hover,
+  a.has-text-light:focus {
+    color: lighten($black-ter, 10%) !important;
+  }
   .has-background-light {
     background-color: $black-ter !important;
   }
+
+  .has-text-grey-lighter {
+    color: $grey-darker !important;
+  }
+  a.has-text-grey-lighter:hover,
+  a.has-text-grey-lighter:focus {
+    color: lighten($grey-darker, 10%) !important;
+  }
+  .has-background-grey-lighter {
+    background-color: $grey-darker !important;
+  }
+
+  .has-text-grey-light {
+    color: $grey-dark !important;
+  }
+  a.has-text-grey-light:hover,
+  a.has-text-grey-light:focus {
+    color: lighten($grey-dark, 10%) !important;
+  }
+  .has-background-grey-light {
+    background-color: $grey-dark !important;
+  }
+
+  .has-text-grey-darker {
+    color: $grey-lighter !important;
+  }
+  a.has-text-grey-darker:hover,
+  a.has-text-grey-darker:focus {
+    color: lighten($grey-lighter, 10%) !important;
+  }
+  .has-background-grey-darker {
+    background-color: $grey-lighter !important;
+  }
+
+  .has-text-grey-dark {
+    color: $grey-light !important;
+  }
+  a.has-text-grey-dark:hover,
+  a.has-text-grey-dark:focus {
+    color: lighten($grey-light, 10%) !important;
+  }
+  .has-background-grey-dark {
+    background-color: $grey-light !important;
+  }
+
+  .has-text-dark {
+    color: $grey-lighter !important;
+  }
+  a.has-text-dark:hover,
+  a.has-text-dark:focus {
+    color: lighten($grey-lighter, 10%) !important;
+  }
   .has-background-dark {
     background-color: $grey-lighter !important;
+  }
+
+  .has-text-black {
+    color: $white !important;
+  }
+  a.has-text-black:hover,
+  a.has-text-black:focus {
+    color: lighten($white, 10%) !important;
+  }
+  .has-background-black {
+    background-color: $white !important;
   }
 }
 
@@ -286,7 +388,7 @@ $danger-25: scale-color($danger, $lightness: 75%);
     background-color: $light;
   }
 
-  +.is-delete {
+  + .is-delete {
     border-color: #aaa;
     border-width: 1px 1px 1px 0;
   }
@@ -335,6 +437,35 @@ $danger-25: scale-color($danger, $lightness: 75%);
     border-color: $danger;
   }
 }
+@media (prefers-color-scheme: dark) {
+  .tag:not(body) {
+    background-color: $black;
+
+    &.is-delete {
+      background-color: $black-ter;
+    }
+
+    &.is-outlined {
+      background-color: $black;
+    }
+    &.is-black.is-outlined {
+      color: $white;
+      border-color: $white;
+    }
+    &.is-dark.is-outlined {
+      color: $grey-lighter;
+      border-color: $grey-lighter;
+    }
+    &.is-light.is-outlined {
+      color: $black-ter;
+      border-color: $black-ter;
+    }
+    &.is-white.is-outlined {
+      color: $black;
+      border-color: $black;
+    }
+  }
+}
 
 // buttons
 .button {
@@ -359,7 +490,7 @@ $danger-25: scale-color($danger, $lightness: 75%);
   }
 
   &.is-warning {
-    color: #88550D;
+    color: #88550d;
   }
 
   &.is-primary:hover,
@@ -716,7 +847,8 @@ ul.is-separated {
   .table {
     background-color: transparent;
 
-    & td, & th {
+    & td,
+    & th {
       border: 1px solid $grey-darker;
       border-width: 0 0 1px;
     }
@@ -806,7 +938,7 @@ ul.is-separated {
 
     td {
       background-color: #121212;
-      border-color: #17181c;
+      border-bottom-color: #17181c;
 
       a {
         color: #b5b5b5;
@@ -851,13 +983,26 @@ ul.is-separated {
     border-radius: 0 0 0.25rem 0.25rem;
   }
 }
+@media (prefers-color-scheme: dark) {
+  .panel {
+    & .panel-block {
+      background-color: #17181c;
+    }
+    & .panel-heading, & .panel-footer {
+      background: #242424;
+      border-color: #4a4a4a;
+      color: #dbdbdb;
+    }
+  }
+}
 
 // forms
 form .field:not(.is-grouped) {
   margin-bottom: 1rem;
 }
-.input,
-.textarea {
+.select select,
+.textarea,
+.input {
   /*background-color: whitesmoke;*/
   border-color: $blue-light;
   box-shadow: none;
@@ -873,9 +1018,21 @@ form .field:not(.is-grouped) {
 }
 
 @media (prefers-color-scheme: dark) {
-  .select select, .textarea, .input {
+  .select select,
+  .textarea,
+  .input {
     background-color: black;
     color: $grey-light;
+    border-color: $blue-dark;
+  }
+  /* Bugfix: May not be needed with a later prefer-darkmode version */
+  .select select:hover,
+  .textarea:hover,
+  .input:hover,
+  .select select.is-hovered,
+  .is-hovered.textarea,
+  .is-hovered.input {
+    border-color: #4a4a4a;
   }
 }
 
@@ -1073,6 +1230,10 @@ form .field:not(.is-grouped) {
 
     > li {
       border-color: $grey-dark;
+
+      & ul {
+        border-top-color: #242424;
+      }
 
       &:last-child {
         border-color: $grey-dark;

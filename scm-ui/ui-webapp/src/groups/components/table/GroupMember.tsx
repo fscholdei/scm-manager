@@ -37,6 +37,10 @@ const StyledMember = styled.li`
   padding: 0.25rem 0.75rem;
   border: 1px solid #eee;
   border-radius: 4px;
+
+  @media (prefers-color-scheme: dark) {
+    border-color: #363636;
+  }
 `;
 
 export default class GroupMember extends React.Component<Props> {

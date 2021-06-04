@@ -37,6 +37,17 @@ const NoSpacingSyntaxHighlighterContainer = styled.div`
     margin: 0 !important;
     padding: 0 0 0.5rem !important;
   }
+
+  @media (prefers-color-scheme: dark) {
+    & pre {
+      color: #b5b5b5;
+      background: #17181c !important;
+
+      & span:last-child {
+        color: #b5b5b5;
+      }
+    }
+  }
 `;
 
 type Props = {

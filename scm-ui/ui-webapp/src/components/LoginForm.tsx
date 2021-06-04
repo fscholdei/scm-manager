@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-import React, {FormEvent} from "react";
+import React, { FormEvent } from "react";
 import { WithTranslation, withTranslation } from "react-i18next";
 import styled from "styled-components";
 import { ErrorNotification, Image, InputField, SubmitButton, UnauthorizedError } from "@scm-manager/ui-components";
@@ -50,9 +50,14 @@ const AvatarImage = styled(Image)`
   width: 128px;
   height: 128px;
   padding: 5px;
-  background: #fff;
+  background: white;
   border: 1px solid lightgray;
   border-radius: 50%;
+
+  @media (prefers-color-scheme: dark) {
+    background: black;
+    border-color: #4a4a4a;
+  }
 `;
 
 class LoginForm extends React.Component<Props, State> {
@@ -60,7 +65,7 @@ class LoginForm extends React.Component<Props, State> {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
     };
   }
 
@@ -73,13 +78,13 @@ class LoginForm extends React.Component<Props, State> {
 
   handleUsernameChange = (value: string) => {
     this.setState({
-      username: value
+      username: value,
     });
   };
 
   handlePasswordChange = (value: string) => {
     this.setState({
-      password: value
+      password: value,
     });
   };
 

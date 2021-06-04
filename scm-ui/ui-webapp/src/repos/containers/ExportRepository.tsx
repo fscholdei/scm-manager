@@ -46,6 +46,10 @@ const InfoBox = styled.div`
   border-radius: 2px;
   border-left: 0.2rem solid;
   border-color: #33b2e8;
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: #072f40;
+  }
 `;
 
 type Props = {
